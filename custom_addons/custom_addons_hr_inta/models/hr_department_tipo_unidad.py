@@ -7,4 +7,4 @@ class HrDepartmentTipoUnidad(models.Model):
     _description = 'Departamento - Tipo Unidad'
 
     descripcion = fields.Char(string="Descripcion")
-    id_buxis = fields.Integer(string="ID Buxis")
+    id_buxis = fields.Char(string="ID Buxis")
