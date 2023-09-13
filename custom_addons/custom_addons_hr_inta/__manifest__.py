@@ -6,6 +6,7 @@
     'website': 'https://git.kan.com.ar/kan/inta/hr-odoo',
     'depends': ['hr'],
     'data': [
+        'security/ir.model.access.csv',
         'views/hr_employee_nro_legajo_views.xml',
     ],
     'installable': True,
