@@ -10,7 +10,7 @@ services:
     volumes:
       - data:/var/lib/odoo
       - ./config:/etc/odoo
-      - ./hr_INTA_addons:/mnt/extra-addons
+      - ./custom_addons:/mnt/extra-addons
   odoo_db:
     image: postgres:13
     env_file: .env
