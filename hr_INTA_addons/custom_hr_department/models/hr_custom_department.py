@@ -1,8 +1,11 @@
 from odoo import models, fields
 
 
-class HrEmployeeNroLegajo(models.Model):
+class HrCustomDepartment(models.Model):
     
     _inherit = 'hr.department'
 
-    tipo_unidad = fields.Char(string="Nro. legajo")
+    tipo_unidad_id = fields.Many2one(
+        'hr.department.tipo_unidad', 
+        string='Tipo Unidad'
+        )

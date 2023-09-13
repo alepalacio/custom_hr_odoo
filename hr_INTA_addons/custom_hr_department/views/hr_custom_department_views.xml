@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="0">
+        <record id="field_tipo_unidad_id" model="ir.model.fields">
+            <field name="name">tipo_unidad_id</field>
+            <field name="model_id" ref="model_hr_department"/>
+            <field name="relation" ref="model_hr_department_tipo_unidad"/>
+            <field name="field_description">Tipo de Unidad</field>
+        </record>
+    </data>
+</odoo>

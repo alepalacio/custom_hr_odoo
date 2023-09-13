@@ -1,22 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <data>
-        <!-- Define a new form view for MyModel -->
-        <record model="ir.ui.view" id="view_my_model_form">
-            <field name="name">hr.department.tipo_unidad.form</field>
-            <field name="model">hr.department.tipo_unidad</field>
-            <field name="arch" type="xml">
-                <form>
-                    <header>
-                        <field name="descripcion" string="Descripcion"/>
-                    </header>
-                    <sheet>
-                        <group>
-                            <field name="id_buxis" string="ID Buxis"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
-
-    </data>
+    <record id="hr_department_tipo_unidad_inherit_view" model="ir.ui.view">
+        <field name="name">hr.department.inherit.view</field>
+        <field name="model">hr.department</field>
+        <field name="inherit_id" ref="hr.view_department_form"/>
+        <field name="arch" type="xml">
+            <div id="o_work_employee_main" position="after">
+                <h6>Nro. legajo </h6>
+                <field name="nro_legajo"/>
+            </div>
+        </field>
+    </record>    
 </odoo>
