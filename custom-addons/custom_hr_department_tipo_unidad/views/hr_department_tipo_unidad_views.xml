@@ -1,0 +1,22 @@
+<odoo>
+    <data>
+        <!-- Define a new form view for MyModel -->
+        <record model="ir.ui.view" id="view_my_model_form">
+            <field name="name">hr.department.tipo_unidad.form</field>
+            <field name="model">hr.department.tipo_unidad</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <field name="descripcion" string="Descripcion"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="id_buxis" string="ID Buxis"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
