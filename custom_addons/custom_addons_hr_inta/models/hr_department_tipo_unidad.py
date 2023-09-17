@@ -7,4 +7,13 @@ class HrDepartmentTipoUnidad(models.Model):
     _description = 'Departamento - Tipo Unidad'
 
     descripcion = fields.Char(string="Descripcion")
-    id_buxis = fields.Char(string="ID Buxis")
+    legado = fields.Char(string="Legado", invisible=True, default=None, transient=True)
+    
+    def name_get(self):
+        """ This method shows specific attribute in a related field."""
+        
+        result = []
+        for record in self:
+            name = f"{record.descripcion}"
+            result.append((record.id, name))
+        return result

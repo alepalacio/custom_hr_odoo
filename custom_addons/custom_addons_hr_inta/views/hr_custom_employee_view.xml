@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="hr_employee_situacion_revista_2_inherit_view" model="ir.ui.view">
+        <field name="name">hr.employee.inherit.view</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <sheet>
+                <div id="o_work_employee_container" class="d-lg-flex">
+                    <div id="o_work_employee_main" class="flex-grow-1">
+                        <group name="informacion_particular" string="Informacion particular">
+                            <group>
+                                <field name="nro_legajo"/>
+                                <field name="situacion_revista_1_id"/>
+                                <field name="situacion_revista_2_id"/>
+                            </group>
+                        </group>
+                    </div>
+                </div>
+            </sheet>
+        </field>
+    </record>    
+</odoo>
