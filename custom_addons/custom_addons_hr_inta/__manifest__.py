@@ -9,6 +9,7 @@
         'security/ir.model.access.csv',
         'views/hr_custom_employee_view.xml',
         'views/hr_custom_department_view.xml',
+        'views/hr_custom_employee_cuil_view.xml',
     ],
     'installable': True,
     'application': True,

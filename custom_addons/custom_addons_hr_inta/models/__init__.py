@@ -8,4 +8,5 @@ from . import (
     hr_employee_situacion_revista_2,
     hr_employee_grupo_familiar,
     hr_employee_formacion,
+    hr_employee_cuil,
     )
