@@ -8,7 +8,12 @@ class HrDepartmentTipoUnidad(models.Model):
 
     descripcion = fields.Char(string="Descripcion")
     legado = fields.Char(string="Legado", invisible=True, default=None, transient=True)
-    tipo_estructura = fields.Char(string="Tipo estructura")
+    tipo_estructura =  fields.Selection([ # Entidad aparte
+        ('horizontal', 'Horizontal'),
+        ('vertical_linea', 'Vertical Linea'),
+        ('vertical_staff', 'Vertical Staff')
+        ], string="Entidad Otorgante"
+        )
     
     def name_get(self):
         """ This method shows specific attribute in a related field."""
