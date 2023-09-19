@@ -13,3 +13,8 @@ class HrCustomEmployee(models.Model):
         'hr.employee.situacion_revista_2', 
         string='Situacion Revista 2'
         )
+    puesto_id = fields.One2many(
+        'hr.employee.puestos', 
+        "employee_id", 
+        string="Puestos"
+        )

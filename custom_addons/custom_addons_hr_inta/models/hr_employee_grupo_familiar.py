@@ -7,18 +7,16 @@ class HrEmployeeGrupoFamiliar(models.Model):
     _description = 'Grupo Familiar'
 
     nombre = fields.Char(string="Nombre")
-    tipo_dni = fields.Selection([ # A CONSULTAR
+    tipo_dni = fields.Selection([ # Query
         ('dni1', 'DNI'),
         ('dni2', 'DNI2'),
         ], string="Tipo DNI")
     dni = fields.Integer(string="DNI")
     vinculo = fields.Selection([
-        ('madre', 'Madre'),
-        ('padre', 'Padre'),
         ('hija/o', 'Hija/o'),
-        ('hermana/o', 'Hermana/o'),
+        ('conyuge', 'Cónyugue'),
         ('otro', 'Otro'),
-        ], string="Vinculo")
+        ], string="Vínculo")
     genero = fields.Selection([
         ('masculino', 'Masculino'),
         ('femenino', 'Femenino'),
