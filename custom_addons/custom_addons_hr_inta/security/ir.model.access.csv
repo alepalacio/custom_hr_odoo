@@ -3,3 +3,8 @@ access_hr_department_tipo_unidad,hr.department.tipo_unidad,model_hr_department_t
 access_hr_employee_situacion_revista_1,hr.employee.situacion_revista_1,model_hr_employee_situacion_revista_1,base.group_user,1,1,1,1
 access_hr_employee_situacion_revista_2,hr.employee.situacion_revista_2,model_hr_employee_situacion_revista_2,base.group_user,1,1,1,1
 access_hr_employee_puestos,hr.employee.puestos,model_hr_employee_puestos,base.group_user,1,1,1,1
+access_hr_employee_area,hr.employee.area,model_hr_employee_area,base.group_user,1,1,1,1
+access_hr_employee_entidad_otorgante,hr.employee.entidad_otorgante,model_hr_employee_entidad_otorgante,base.group_user,1,1,1,1
+access_hr_employee_formacion,hr.employee.formacion,model_hr_employee_formacion,base.group_user,1,1,1,1
+access_hr_employee_grupo_familiar,hr.employee.grupo_familiar,model_hr_employee_grupo_familiar,base.group_user,1,1,1,1
+access_hr_employee_titulo_carrera,hr.employee.titulo_carrera,model_hr_employee_titulo_carrera,base.group_user,1,1,1,1

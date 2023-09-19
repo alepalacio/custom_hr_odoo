@@ -10,4 +10,7 @@ from . import (
     hr_employee_formacion,
     hr_employee_cuil,
     hr_employee_puestos,
+    hr_employee_titulo_carrera,
+    hr_employee_entidad_otorgante,
+    hr_employee_area,
     )

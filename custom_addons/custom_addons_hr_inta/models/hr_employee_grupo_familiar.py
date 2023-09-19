@@ -6,15 +6,21 @@ class HrEmployeeGrupoFamiliar(models.Model):
     _name = 'hr.employee.grupo_familiar'
     _description = 'Grupo Familiar'
 
-    nombre = fields.Char(string="Nombre")
-    tipo_dni = fields.Selection([ # Query
-        ('dni1', 'DNI'),
-        ('dni2', 'DNI2'),
+    nombre = fields.Char(
+        string="Nombre"
+        )
+    tipo_dni = fields.Selection([
+        ('du', 'DU'),
+        ('pa', 'PA'),
+        ('lc', 'LC'),
+        ('le', 'LE'),
+        ('ci', 'CI'),
         ], string="Tipo DNI")
-    dni = fields.Integer(string="DNI")
+    dni = fields.Char(
+        string="DNI"
+        )
     vinculo = fields.Selection([
-        ('hija/o', 'Hija/o'),
-        ('conyuge', 'Cónyugue'),
+        ('hijo', 'Hijo'),
         ('otro', 'Otro'),
         ], string="Vínculo")
     genero = fields.Selection([
@@ -22,6 +28,24 @@ class HrEmployeeGrupoFamiliar(models.Model):
         ('femenino', 'Femenino'),
         ('otro', 'Otro'),
         ], string="Género")
-    activo = fields.Boolean(default=False, string="Activo")
-    fecha_desvinculacion = fields.Date(string="Fecha de desvinculación")
-    employee_id =fields.Many2one('hr.employee', string='Empleado')
+    activo = fields.Boolean(
+        default=False, 
+        string="Activo"
+        )
+    fecha_desvinculacion = fields.Date(
+        string="Fecha de desvinculación"
+        )
+    employee_id = fields.Many2one(
+        comodel_name="hr.employee", 
+        required=False, 
+        ondelete="cascade"
+        )
+    
+    def name_get(self):
+        """ This method shows specific attribute in a related field."""
+        
+        result = []
+        for record in self:
+            name = f"{record.nombre}"
+            result.append((record.id, name))
+        return result
