@@ -5,4 +5,7 @@ class HrEmployeeNroLegajo(models.Model):
     
     _inherit = 'hr.employee'
 
-    nro_legajo = fields.Char(string="Nro. legajo")
+    nro_legajo = fields.Integer(
+        string="Nro. legajo", 
+        default=None
+        )
