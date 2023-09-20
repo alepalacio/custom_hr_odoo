@@ -12,7 +12,7 @@ class HrDepartmentTipoUnidad(models.Model):
         ('horizontal', 'Horizontal'),
         ('vertical_linea', 'Vertical Linea'),
         ('vertical_staff', 'Vertical Staff')
-        ], string="Entidad Otorgante"
+        ], string=""
         )
     
     def name_get(self):

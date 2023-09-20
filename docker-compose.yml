@@ -18,6 +18,15 @@ services:
       - db:/var/lib/pgsql/data/pgdata
     ports:
       - "5433:5432"
+
+  odoo_wdb_debugger:
+    image: kozea/wdb
+    container_name: "odoo_debugger"
+    restart: always
+    depends_on:
+      - odoo_server
+    ports:
+      - "15984:1984"
 volumes:
   data:
   db:
