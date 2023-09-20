@@ -12,7 +12,7 @@ class HrDepartmentTipoUnidad(models.Model):
         ('horizontal', 'Horizontal'),
         ('vertical_linea', 'Vertical Linea'),
         ('vertical_staff', 'Vertical Staff')
-        ], string=""
+        ], string="Tipo Estructura"
         )
     
     def name_get(self):
