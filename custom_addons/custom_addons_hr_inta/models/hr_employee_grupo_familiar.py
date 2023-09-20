@@ -21,6 +21,7 @@ class HrEmployeeGrupoFamiliar(models.Model):
         )
     vinculo = fields.Selection([
         ('hijo', 'Hijo'),
+        ('conyuge', 'Cónyuge'),
         ('otro', 'Otro'),
         ], string="Vínculo")
     genero = fields.Selection([
