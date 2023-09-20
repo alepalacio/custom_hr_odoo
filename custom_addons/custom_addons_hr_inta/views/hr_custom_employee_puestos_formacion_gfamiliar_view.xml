@@ -16,7 +16,7 @@
                 <page name="formacion" string="Formación">
                     <group>
                         <group string="Formación">
-                            <field name="formacion_titulo_carrera_descripcion"/>
+                            <field name="formacion_id"/>
                         </group>
                     </group>
                 </page>
