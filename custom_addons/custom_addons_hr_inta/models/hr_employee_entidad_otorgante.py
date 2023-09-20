@@ -10,6 +10,7 @@ class HrEmployeeEntidadOtorgante(models.Model):
         string="Descripción", 
         default=None
         )
+    legado = fields.Char(string="Legado")
 
     def name_get(self):
         """ This method shows specific attribute in a related field."""
