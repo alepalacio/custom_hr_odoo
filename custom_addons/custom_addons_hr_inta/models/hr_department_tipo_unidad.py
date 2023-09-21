@@ -7,8 +7,8 @@ class HrDepartmentTipoUnidad(models.Model):
     _description = 'Departamento - Tipo Unidad'
 
     descripcion = fields.Char(string="Descripcion")
-    legado = fields.Char(string="Legado", invisible=True, default=None, transient=True)
-    tipo_estructura =  fields.Selection([ # Entidad aparte
+    legado = fields.Integer(string="Legado", default=None)
+    tipo_estructura =  fields.Selection([
         ('horizontal', 'Horizontal'),
         ('vertical_linea', 'Vertical Linea'),
         ('vertical_staff', 'Vertical Staff')

@@ -1,17 +1,14 @@
 from odoo import models, fields
 
 
-class HrEmployeeArea(models.Model):
+class HrEmployeeCargos(models.Model):
     
-    _name = 'hr.employee.area'
-    _description = 'Area'
+    _name = 'hr.employee.cargos'
+    _description = 'Cargos'
 
-    descripcion = fields.Char(
-        string="Descripción", 
-        default=None
-        )
-    legado = fields.Integer(string="Legado", default=None)
-
+    descripcion = fields.Char(string="Descripción del cargo", default=None)
+    legado = fields.Char(string="Legado", default=None)
+    
     def name_get(self):
         """ This method shows specific attribute in a related field."""
         

@@ -13,4 +13,6 @@ from . import (
     hr_employee_titulo_carrera,
     hr_employee_entidad_otorgante,
     hr_employee_area,
+    hr_employee_cargo,
+    hr_employee_obra_social,
     )

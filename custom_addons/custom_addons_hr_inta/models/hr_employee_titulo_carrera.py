@@ -10,7 +10,7 @@ class HrEmployeeTituloCarrera(models.Model):
         string="Descripción", 
         default=None
         )
-    legado = fields.Char(string="Legado")
+    legado = fields.Integer(string="Legado", default=None)
 
     def name_get(self):
         """ This method shows specific attribute in a related field."""

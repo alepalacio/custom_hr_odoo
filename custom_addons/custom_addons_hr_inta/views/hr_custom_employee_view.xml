@@ -10,7 +10,6 @@
                     <div id="o_work_employee_main" class="flex-grow-1">
                         <group name="informacion_particular" string="Informacion particular">
                             <group>
-                                <field name="nro_legajo"/>
                                 <field name="situacion_revista_1_id"/>
                                 <field name="situacion_revista_2_id"/>
                             </group>
