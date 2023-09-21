@@ -14,7 +14,8 @@ class HrEmployeePuestos(models.Model):
     employee_id = fields.Many2one(
         comodel_name="hr.employee", 
         required=False, 
-        ondelete="cascade"
+        ondelete="cascade",
+        string="Empleado"
         )
     
     def name_get(self):
