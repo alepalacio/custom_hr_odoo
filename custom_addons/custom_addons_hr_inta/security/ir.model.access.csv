@@ -8,3 +8,4 @@ access_hr_employee_entidad_otorgante,hr.employee.entidad_otorgante,model_hr_empl
 access_hr_employee_formacion,hr.employee.formacion,model_hr_employee_formacion,base.group_user,1,1,1,1
 access_hr_employee_grupo_familiar,hr.employee.grupo_familiar,model_hr_employee_grupo_familiar,base.group_user,1,1,1,1
 access_hr_employee_titulo_carrera,hr.employee.titulo_carrera,model_hr_employee_titulo_carrera,base.group_user,1,1,1,1
+access_hr_employee_cargo,hr.employee.cargos,model_hr_employee_cargos,base.group_user,1,1,1,1
