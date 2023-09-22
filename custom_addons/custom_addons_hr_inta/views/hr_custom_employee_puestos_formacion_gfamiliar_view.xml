@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="hr_employee_puestos_inherit_view" model="ir.ui.view">
+    <record id="hr_employee_pfgf_inherit_view" model="ir.ui.view">
         <field name="name">hr.employee.inherit.view</field>
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
@@ -9,21 +9,45 @@
                 <page name="puestos" string="Puestos">
                     <group>
                         <group string="Puesto de trabajo">
-                            <field name="puesto_id"/>
+                            <field name="puesto_id" widget="one2many_list">
+                                <tree string="Puesto">
+                                    <field name="puesto" string="Puesto"/>
+                                    <field name="descripcion" string="Descripción" width="50%" />
+                                    <field name="fecha_inicio" string="Fecha Inicio" />
+                                    <field name="fecha_fin" string="Fecha Fin" />
+                                    <field name="estado" string="Estado" />
+                                </tree>
+                            </field>
                         </group>
                     </group>
                 </page>
                 <page name="formacion" string="Formación">
                     <group>
                         <group string="Formación">
-                            <field name="formacion_id"/>
+                            <field name="formacion_id" widget="one2many_list">
+                                <tree string="Formación">
+                                    <field name="formacion_titulo_carrera_descripcion" string="Título" />
+                                    <field name="entidad_otorgante_descripcion" string="Entidad Otorgante" />
+                                    <field name="area_descripcion" string="Área" />
+                                    <field name="nivel" string="Nivel" />
+                                    <field name="estado" string="Estado" />
+                                    <field name="fecha_inicio" string="Fecha Inicio" />
+                                    <field name="fecha_fin" string="Fecha Fin" />
+                                </tree>
+                            </field>
                         </group>
                     </group>
                 </page>
                 <page name="grupo_familiar" string="Grupo Familiar">
                     <group>
                         <group string="Grupo Familiar">
-                            <field name="grupo_familiar_id"/>
+                            <field name="grupo_familiar_id" widget="one2many_list">
+                                <tree string="Grupo Familiar">
+                                    <field name="nombre" string="Nombre" />
+                                    <field name="vinculo" string="Vínculo" />
+                                    <field name="genero" string="Género" />
+                                </tree>
+                            </field>
                         </group>
                     </group>
                 </page>

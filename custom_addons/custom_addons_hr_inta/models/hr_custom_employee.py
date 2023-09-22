@@ -23,11 +23,6 @@ class HrCustomEmployee(models.Model):
         "employee_id",
         string="Formación"
     )
-    formacion_titulo_carrera_descripcion = fields.One2many(
-        "hr.employee.formacion",
-        "titulo_carrera_id",
-        string="Formación"
-        )
     grupo_familiar_id = fields.One2many(
         "hr.employee.grupo_familiar",
         "employee_id",

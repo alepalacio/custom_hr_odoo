@@ -8,18 +8,34 @@ class HrEmployeeFormacion(models.Model):
 
     titulo_carrera_id = fields.Many2one(
         'hr.employee.titulo_carrera',
-        string="Titulo de carrera"
+        string="Título"
         )
-    # formacion_titulo_carrera_descripcion = fields.Char(
-    #     string="Descripción del Título de Carrera",
-    #     compute="_compute_titulo_carrera_descripcion",
-    #     store=True,
-    #     #readonly=True,
-    #     )
+    formacion_titulo_carrera_descripcion = fields.Char(
+        string="Título",
+        related='titulo_carrera_id.descripcion',
+        store=True,
+        readonly=True,
+        )
     entidad_otorgante_id = fields.Many2one(
         'hr.employee.entidad_otorgante',
         string="Entidad Otorgante"
         )
+    entidad_otorgante_descripcion = fields.Char(
+        string="Entidad Otorgante",
+        related="entidad_otorgante_id.descripcion",
+        store=True,
+        readonly=True
+    )
+    area_id = fields.Many2one(
+        'hr.employee.area',
+        string="Área"
+        )
+    area_descripcion = fields.Char(
+        string="Área",
+        related="area_id.descripcion",
+        store=True,
+        readonly=True
+    )
     nivel = fields.Selection([
         ('diplomatura', 'Diplomatura'),
         ('doctorado', 'Doctorado'),
@@ -31,22 +47,10 @@ class HrEmployeeFormacion(models.Model):
         ('terciario', 'Terciaro - Tecnicatura'),
         ('universitario', 'Universitario')
         ], string="Nivel")
-    area_id = fields.Many2one(
-        'hr.employee.area',
-        string="Área"
-        )
     estado = fields.Selection([
         ('si', 'Sí'),
         ('en_curso', 'En Curso'),
         ], string="Estado")
-    fecha_inicio = fields.Date(string="Fecha de inicio")
-    fecha_fin = fields.Date(string="Fecha de finalización")
+    fecha_inicio = fields.Date(string="Fecha Inicio")
+    fecha_fin = fields.Date(string="Fecha Fin")
     employee_id =fields.Many2one('hr.employee', string='Empleado')
-    
-    # @api.depends("descripcion")
-    # def _compute_titulo_carrera_descripcion(self):
-    #     for record in self:
-    #         if record.titulo_carrera_id:
-    #             record.formacion_titulo_carrera_descripcion = record.titulo_carrera_id.descripcion
-    #         else:
-    #             record.formacion_titulo_carrera_descripcion = None
