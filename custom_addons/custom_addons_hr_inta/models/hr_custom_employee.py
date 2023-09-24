@@ -36,3 +36,5 @@ class HrCustomEmployee(models.Model):
         "hr.employee.cargos",
         string="Cargo Interino"
     )
+    department_id = fields.Many2one(string="Unidad")
+    parent_id = fields.Many2one(string="Titular Unidad")
