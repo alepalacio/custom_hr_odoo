@@ -8,6 +8,7 @@
             <xpath expr="//field[@name='coach_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
+            <xpath expr="//div[@id='o_work_employee_main']//group[4]" position="replace"/>
             <sheet>
                 <div id="o_work_employee_container" class="d-lg-flex">
                     <div id="o_work_employee_main" class="flex-grow-1">
