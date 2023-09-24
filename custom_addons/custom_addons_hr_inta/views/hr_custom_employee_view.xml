@@ -5,11 +5,15 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='coach_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
             <sheet>
                 <div id="o_work_employee_container" class="d-lg-flex">
                     <div id="o_work_employee_main" class="flex-grow-1">
-                        <group name="informacion_particular" string="Informacion particular">
+                        <group name="informacion_laboral" string="Informacion Laboral">
                             <group>
+                                <field name="nro_legajo"/>
                                 <field name="situacion_revista_1_id"/>
                                 <field name="situacion_revista_2_id"/>
                             </group>
