@@ -38,3 +38,4 @@ class HrCustomEmployee(models.Model):
     )
     department_id = fields.Many2one(string="Unidad")
     parent_id = fields.Many2one(string="Titular Unidad")
+    identification_id = fields.Char(string="Documento")
