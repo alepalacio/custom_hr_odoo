@@ -10,9 +10,7 @@
         'views/hr_custom_employee_view.xml',
         'views/hr_custom_department_view.xml',
         'views/hr_custom_employee_cuil_view.xml',
-        'views/hr_custom_employee_puestos_formacion_gfamiliar_view.xml',
-        'views/hr_custom_employee_nro_legajo_view.xml',
-    ],
+        'views/hr_custom_employee_puestos_formacion_gfamiliar_view.xml',    ],
     'installable': True,
     'application': True,
 }
