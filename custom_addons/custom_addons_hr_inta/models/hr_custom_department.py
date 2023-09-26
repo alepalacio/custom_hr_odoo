@@ -2,6 +2,7 @@ from odoo import models, fields, api
 
 
 class HrCustomDepartment(models.Model):
+    """ Modelo heredado y personalizado de hr.departments """
     
     _inherit = 'hr.department'
 

@@ -2,6 +2,8 @@ from odoo import models, fields, api
 
 
 class HrEmployeeFormacion(models.Model):
+    """ Modelo personalizado para formaciones"""
+
     
     _name = 'hr.employee.formacion'
     _description = 'Formacion'
@@ -50,6 +52,13 @@ class HrEmployeeFormacion(models.Model):
     estado = fields.Selection([
         ('si', 'Sí'),
         ('en_curso', 'En Curso'),
+        ('finalizado', 'Finalizado'),
+        ('abandono', 'Abandonó'),
+        ('baja', 'Baja'),
+        ('no_inicio', 'No Inició'),
+        ('otro', 'Otro'),
+        ('renuncia', 'Renuncia'),
+        ('suspendido', 'Suspendido'),
         ], string="Estado")
     fecha_inicio = fields.Date(string="Fecha Inicio")
     fecha_fin = fields.Date(string="Fecha Fin")

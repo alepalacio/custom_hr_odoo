@@ -4,6 +4,8 @@
         <field name="model">hr.department</field>
         <field name="inherit_id" ref="hr.view_department_form"/>
         <field name="arch" type="xml">
+
+            <!-- Esta vista agrega el campo "tipo_unidad_id" proveniente del modelo custom de departments. -->
             <xpath expr="//field[@name='parent_id']" position="after">
                 <field name="tipo_unidad_id" position="after"/>
             </xpath>

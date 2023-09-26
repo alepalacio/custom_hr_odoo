@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="hr_custom_employee_formacion_form_view" model="ir.ui.view">
+        <field name="name">hr.employee.formacion.form.view</field>
+        <field name="model">hr.employee.formacion</field>
+        <field name="arch" type="xml">
+
+            <!-- Este form sobreescribe el default modal para la creación de Formaciones -->
+            <form>
+                <group>
+                    <group>
+                        <field name="titulo_carrera_id" string="Título de Carrera"/>
+                        <field name="nivel" string="Nivel"/>
+                        <field name="entidad_otorgante_id" string="Entidad Otorgante"/>
+                        <field name="area_id" string="Área"/>
+                    </group>
+                    <group>
+                        <field name="estado" string="Estado"/>
+                        <field name="fecha_inicio" string="Fecha Inicio"/>
+                        <field name="fecha_fin" string="Fecha Fin"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>    
+</odoo>

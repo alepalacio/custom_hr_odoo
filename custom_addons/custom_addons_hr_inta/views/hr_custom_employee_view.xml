@@ -5,27 +5,127 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='address_home_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
+
+            <!-- Esta vista sobreescribe completamente la vista default de employees. -->
+
+            <!-- Agrego campo número de legajo -->
+            <xpath expr="//field[@name='mobile_phone']" position="before">
+                <field name="nro_legajo" string="Número de legajo" />
             </xpath>
+
+            <!-- Oculto campo "coach_id" -->
             <xpath expr="//field[@name='coach_id']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
-            <xpath expr="//page[@name='personal_information']//group[1]//group[3]" position="replace"/>
-            <xpath expr="//div[@id='o_work_employee_main']//group[4]" position="replace"/>
-            <sheet>
-                <div id="o_work_employee_container" class="d-lg-flex">
-                    <div id="o_work_employee_main" class="flex-grow-1">
-                        <group name="informacion_laboral" string="Informacion Laboral">
-                            <group>
-                                <field name="nro_legajo"/>
-                                <field name="situacion_revista_1_id"/>
-                                <field name="situacion_revista_2_id"/>
+
+            <!-- Sobreescribo page de nombre "public" y personalizo conforme requerimientos. -->
+            <xpath expr="//page[@name='public']" position="replace">
+                <page name="datos_laborales" string="Datos Laborales">
+                    <div id="o_work_employee_container" class="d-lg-flex">
+                        <div id="o_work_employee_container_main" class="flex-grow-1">
+                            <group string="Información Laboral">
+                                <field name="work_email" string="Usuario" />
+                                <field name="department_id" string="Unidad"/>
+                                <field name="work_phone" string="Teléfono Laboral"/>
+                                <field name="work_email" string="E-Mail" />
+                                <field name="sindicato" string="Sindicato" />
+                                <field name="leave_date_from" string="Fecha de Ingreso" />
+                                <field name="situacion_revista_1_id" string="Situación de revista" />
+                                <field name="situacion_revista_2_id" string="Situación de revista 2" />
+                                <field name="cargo_id" string="Grupo - Nivel - Grado" />
+                                <field name="cargo_interino_id" string="Grupo - Nivel - Grado Interino" />
+                                <field name="actividad_principal" string="Actividad principal" />
+                                <field name="seguro" string="Seguro" />
+                                <field name="art" string="ART" />
                             </group>
-                        </group>
+                            <group name="managers" string="Approvers" class="hide-group-if-empty" invisible="1">
+                            </group>
+                        </div>
+
+                        <!-- Organigrama de dependencias -->
+                        <div id="o_employee_right" class="col-lg-4 px-0 ps-lg-5 pe-lg-0">
+                            <separator string="Organigrama"/>
+                            <field name="child_ids" class="position-relative" widget="hr_org_chart" readonly="1" nolabel="1"/>
+                        </div>
+
                     </div>
-                </div>
-            </sheet>
+                    <div id="o_puestos_employee_container" class="d-lg-flex"> 
+                        <div id="o_puestos_employee_container_main" class="flex-grow-1">
+                            <group string="Histórico de puestos">
+                                <field name="puesto_id" widget="one2many_list">
+                                    <tree string="Puesto">
+                                        <field name="puesto" string="Puesto"/>
+                                        <field name="fecha_inicio" string="Fecha Inicio" />
+                                        <field name="fecha_fin" string="Fecha Fin" />
+                                        <field name="estado" string="Estado" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </div>
+                    </div>
+                </page>
+            </xpath>
+
+            <!-- Sobreescribo la page de nombre "personal_information" y personalizo conforme requerimientos. -->
+            <xpath expr="//page[@name='personal_information']" position="replace">
+                <page name="datos_personales" string="Datos Personales">
+                    <div id="o_contacto_employee_container" class="d-lg-flex">
+                        <div id="o_contacto_employee_container_main" class="flex-grow-1">
+                            <group string="Contacto">
+                                <field name="address_home_id" 
+                                    context="{
+                                    'show_address': 1,
+                                    'default_type': 'private',
+                                    'form_view_ref': 'res_partner_view_form_private_custom'}"
+                                options='{"always_reload": True, "highlight_first_line": False}'
+                                widget="street" />
+                                <field name="phone" string="Teléfono"/>
+                            </group>
+                            <group string="Datos">
+                                <field name="name" string="Nombre completo"/>
+                                <field name="birthday" string="Fecha de nacimiento"/>
+                                <field name="country_id" string="País de nacimiento"/>
+                                <field name="identification_id" string="DNI"/>
+                                <field name="cuil" string="CUIL"/>
+                                <field name="gender" string="Género"/>
+                                <field name="marital" string="Estado Civil"/>
+                                <field name="obra_social" string="Obra Social"/>
+                            </group>
+                        </div>
+                    </div>
+                    <div id="o_formacion_employee_container" class="d-lg-flex">
+                        <div id="o_formacion_employee_container_main" class="flex-grow-1">
+                            <group string="Formación">
+                                <field name="formacion_id" widget="one2many_list">
+                                    <tree string="Formación">
+                                        <field name="formacion_titulo_carrera_descripcion" string="Título de Carrera" />
+                                        <field name="entidad_otorgante_descripcion" string="Entidad Otorgante" />
+                                        <field name="nivel" string="Nivel" />
+                                        <field name="area_descripcion" string="Área" />
+                                        <field name="estado" string="Estado" />
+                                        <field name="fecha_inicio" string="Fecha Inicio" />
+                                        <field name="fecha_fin" string="Fecha Fin" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </div>
+                    </div>
+                    <div id="o_grupo_familiar_employee_container" class="d-lg-flex">
+                        <div id="o_grupo_familiar_employee_container_main" class="flex-grow-1">
+                            <group string="Grupo Familiar">
+                                <field name="grupo_familiar_id" widget="one2many_list">
+                                    <tree string="Grupo Familiar">
+                                        <field name="nombre" string="Familiar" />
+                                        <field name="vinculo" string="Parentesco" />
+                                        <field name="genero" string="Género" />
+                                        <field name="dni" string="DNI" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </div>
+                    </div>
+                </page>
+            </xpath>
         </field>
-    </record>    
+    </record>
 </odoo>

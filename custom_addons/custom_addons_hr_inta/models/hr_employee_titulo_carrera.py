@@ -2,6 +2,8 @@ from odoo import models, fields
 
 
 class HrEmployeeTituloCarrera(models.Model):
+    """ Modelo personalizado para títulos de carrera """
+
     
     _name = 'hr.employee.titulo_carrera'
     _description = 'Titulo Carrera'

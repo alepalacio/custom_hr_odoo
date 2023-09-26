@@ -2,7 +2,8 @@ from odoo import models, fields
 
 
 class HrEmployeeEntidadOtorgante(models.Model):
-    
+    """ Modelo personalizado para entidad otorgante"""
+
     _name = 'hr.employee.entidad_otorgante'
     _description = 'Entidad Otorgante'
 

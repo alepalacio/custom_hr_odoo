@@ -2,6 +2,8 @@ from odoo import models, fields
 
 
 class HrEmployeeGrupoFamiliar(models.Model):
+    """ Modelo personalizado para grupo familiar """
+
     
     _name = 'hr.employee.grupo_familiar'
     _description = 'Grupo Familiar'
@@ -19,6 +21,9 @@ class HrEmployeeGrupoFamiliar(models.Model):
     dni = fields.Char(
         string="DNI"
         )
+    fecha_nacimiento = fields.Date(
+        string="Fecha de nacimiento"
+    )
     vinculo = fields.Selection([
         ('hijo', 'Hijo'),
         ('conyuge', 'Cónyuge'),

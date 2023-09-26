@@ -2,6 +2,8 @@ from odoo import models, fields
 
 
 class HrEmployeeSituacionRevista1(models.Model):
+    """ Modelo personalizado para situación revista 1 """
+
     
     _name = 'hr.employee.situacion_revista_1'
     _description = 'Situacion Revista 1'
