@@ -10,6 +10,7 @@
         'views/hr_custom_department_view.xml',
         'views/hr_custom_employee_view.xml',
         'views/hr_custom_employee_formacion_view.xml',
+        'views/hr_custom_employee_related_contacts_button.xml',
         ],
     'installable': True,
     'application': True,
