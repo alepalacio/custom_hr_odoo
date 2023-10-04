@@ -10,7 +10,7 @@
 
             <!-- Agrego campo número de legajo -->
             <xpath expr="//field[@name='mobile_phone']" position="before">
-                <field name="nro_legajo" string="Número de legajo" />
+                <field name="nro_legajo" string="Número de legajo" widget="char" />
             </xpath>
 
             <!-- Oculto campo "coach_id" -->
@@ -82,7 +82,6 @@
                                 <field name="phone" string="Teléfono"/>
                             </group>
                             <group string="Datos">
-                                <field name="name" string="Nombre completo"/>
                                 <field name="birthday" string="Fecha de nacimiento"/>
                                 <field name="country_id" string="País de nacimiento"/>
                                 <field name="identification_id" string="DNI"/>
@@ -124,6 +123,22 @@
                             </group>
                         </div>
                     </div>
+                </page>
+            </xpath>
+            <xpath expr="//page[@name='hr_settings']" position="replace">
+                <page name="configuracion_rrhh" string="Configuración RRHH" groups="hr.group_hr_user">
+                    <group>
+                        <group string='Estado' name="active_group">
+                            <field name="employee_type" string="Tipo de empleado"/>
+                            <field name="user_id" string="Usuario relacionado" domain="[('share', '=', False)]" context="{'allow_create_employee': False, 'default_create_employee': False}"/>
+                        </group>
+                        <group string="Asistencia/Punto de venta" name="identification_group">
+                            <field name="pin" string="Código PIN"/>
+                        </group>
+                        <group string='Payroll' name="payroll_group" invisible="1">
+                        </group>
+                        <group name="application_group" string="Configuracions de aplicacion" invisible="1"/>
+                    </group>
                 </page>
             </xpath>
         </field>
